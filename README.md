@@ -1,0 +1,1 @@
+Practice app using rails for users to be able to create (and update, list, delete, etc.) contacts
