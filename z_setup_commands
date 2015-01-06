@@ -4,9 +4,9 @@ $ rails new wikipages -d postgresql –T
 
 [note: can also replace the postgres reference by creating a file called .railsrc in your home directory and type -d postgresql -T.]
 
-2 temporary configuration changes we need to make before starting.
-	In config/application.rb, we need to add config.action_controller.permit_all_parameters = true just before the last two end keywords. 
-	In app/controllers/application_controller.rb, we need to comment out the line that says protect_from_forgery with: :exception. We'll discuss these more later.
+2 temporary configuration changes:
+	config/application.rb: add config.action_controller.permit_all_parameters = true just before the last two end keywords. 
+	app/controllers/application_controller.rb: comment out the line that says protect_from_forgery with: :exception. 
 
 *Database.yml:
 

@@ -1,3 +1,4 @@
+
 class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
@@ -10,11 +11,11 @@ class ContactsController < ApplicationController
   end
 
   def create
-  	@contact = Contact.new(:name => params[:name], 
+    @contact = Contact.new(:name => params[:name], 
                               :email => params[:email],
                               :phone => params[:phone])
     #note this is equivalent to:
-    #  @contact = Contact.new(params[:contact])
+    #  @contact = Contact.new(params[contact])
 
     if @contact.save
       render('contacts/success.html.erb')
