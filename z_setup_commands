@@ -27,6 +27,7 @@ $ rake db:create
 *Migration
 
 	$ rails generate migration create_contacts
+	$ rails generate migration create_phones
 
 *Testing
 

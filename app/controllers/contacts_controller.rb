@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   end
 
   def new 
-    @contact = Contact.new  #ie, the contact when this action occurs is the new Contact. Equivalent to @contact = Contact.new(params[:contact])
+    @contact = Contact.new  #we include this variable here so that if there are errors in the submission, rails knows what contact to attribute the errors to (even though this contact is not yet saved.)
     render('contacts/new.html.erb')
   end
 
