@@ -14,4 +14,21 @@ class PhonesController < ApplicationController
       render('phones/new.html.erb')
     end
   end
+
+ def edit
+    @contact = Contact.find(params[:contact_id])
+    @phone = Phone.find(params[:phone_id])
+    render('phones/edit.html.erb') 
+ end
+
+  def update
+    #@contact = Contact.find(params[:contact_id])
+    @phone = Phone.find(params[:phone_id])
+    if @phone.update(:number => params[:number])
+      render('phones/success.html.erb')
+    else
+      render('phones/edit.html.erb')
+    end
+  end
+
 end
