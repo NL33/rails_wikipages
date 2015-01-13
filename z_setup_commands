@@ -12,7 +12,7 @@ $ rails new wikipages -d postgresql –T
 
 development:   
   adapter: postgresql   
-  database: wikipages_development  test:   
+  database: wikipages_development    
 
 test:
   adapter: postgresql   

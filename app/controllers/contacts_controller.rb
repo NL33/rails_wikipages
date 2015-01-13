@@ -17,7 +17,7 @@ class ContactsController < ApplicationController
     #  @contact = Contact.new(params[:contact])
 
     if @contact.save
-      render('contacts/success.html.erb')
+      redirect_to("/contacts/#{@contact.id}") #redirects to url with id of contact just created here
     else
       render('contacts/new.html.erb')
     end
@@ -38,7 +38,8 @@ class ContactsController < ApplicationController
     if @contact.update(:name => params[:name],
                        :email => params[:email],
                        :phone => params[:phone])
-      render('contacts/success.html.erb')
+      
+      redirect_to("/contacts/#{@contact.id}")
     else
       render('contacts/edit.html.erb')
     end
@@ -47,7 +48,7 @@ class ContactsController < ApplicationController
  def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    render('contacts/destroy.html.erb')
+    redirect_to("/contacts") #this is the common path for redirect when destroy
  end
 
 end
